@@ -1,0 +1,64 @@
+public class Student {
+    private String name;
+    private int year;
+    
+    public Student(String name, int year) {
+    	this.name = name;
+    	this.year = year;
+    }
+    public String getName() {
+    	return this.name;
+    }
+    public void setName(String name) {
+    	this.name = name;
+    }
+    public int getYear() {
+    	return this.year;
+    }
+    public void setYear(int year) {
+    	this.year = year;
+    }
+
+}
+-------------------------------------------------------------------
+import java.util.*;
+public class Test {
+public Scanner sc= new Scanner(System.in);
+ public int n;
+ public Student[] student;
+ public void nhapSoPhanTu() {
+	 int x = sc.nextInt();
+	 sc.nextLine();
+	this.n = x;
+	student = new Student[this.n];
+	}
+ 
+ public void nhapStudent() {
+	 for (int i = 0; i < this.n; i++) {
+		 String fullName = sc.nextLine();
+		 int fullYear = sc.nextInt();
+		 sc.nextLine();
+		 student[i] = new Student(fullName,fullYear);
+	 }
+	 }
+ public void inDS() {
+	 long tuoi = 0;
+	 for (int i = 0; i < this.n; i++) {
+		System.out.println(student[i].getName()); 
+		tuoi += student[i].getYear();
+	 }
+	 System.out.print(tuoi);
+	 
+ }
+}
+---------------------------------------------------------
+public class Main {
+
+	public static void main(String[] args) {
+		Test tester = new Test();
+		tester.nhapSoPhanTu();
+		tester.nhapStudent();
+		tester.inDS();
+	}
+
+}
