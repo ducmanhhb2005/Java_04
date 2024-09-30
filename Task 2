@@ -1,0 +1,27 @@
+package four;
+import java.util.*;
+public class TestNV {
+  public Scanner sc = new Scanner(System.in); 
+  public NhanVien[] nhanVien = new NhanVien[2];
+  public void truyenThongTin() {
+  for (int i = 0; i<2; i++) {
+	 String ten = sc.nextLine();
+	double luongBasic = sc.nextDouble();
+	sc.nextLine();
+	double heSo = sc.nextDouble();
+	sc.nextLine();
+	double max = sc.nextDouble();
+	sc.nextLine();
+	nhanVien[i] = new NhanVien(ten, luongBasic, heSo, max);
+  }
+  }
+  public void inThongTin() {
+  for (int j = 0; j<2; j++) {
+	  nhanVien[j].inTT();
+	  System.out.println(nhanVien[j].tinhLuong());
+	 int x = sc.nextInt();
+	 System.out.println(nhanVien[j].tangLuong(x));
+  }
+}
+}
+
